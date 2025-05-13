@@ -1,0 +1,236 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap');
+
+:root {
+  --primary-color: #2c3e50;
+  --accent-color: #3498db;
+  --bg-light: rgba(255, 255, 255, 0.95);
+  --shadow-soft: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --transition-smooth: all 0.3s ease;
+  --container-bg: rgba(255, 255, 255, 0.85);
+  --text-box-bg: rgba(255, 255, 255, 0.75);
+}
+
+body {
+  font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-image: url('roger-federer-2012-wimbledon-mens-final-7600267.jpg.webp');
+  background-size: cover;
+  background-position: center 30%;
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: #333;
+}
+
+.content-container {
+  background-color: rgba(255, 255, 255, 0.3);
+  min-height: 100vh;
+  padding: 3rem 2rem;
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.booking-container {
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-section {
+  background-color: var(--text-box-bg);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem 2rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+}
+
+.title-container {
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  color: #1a2a3a;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7);
+  margin: 0;
+  letter-spacing: -0.01em;
+  font-size: 2.6rem;
+  line-height: 1.2;
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 3px;
+  background-color: var(--accent-color);
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.instruction-text {
+  font-weight: 500;
+  line-height: 1.7;
+  margin: 0;
+  font-size: 1.1rem;
+  color: #1e1e1e;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.4);
+  margin-top: 1rem;
+}
+
+.instruction-text span.font-semibold {
+  color: #094c85;
+  font-weight: 600;
+}
+
+#calendar {
+  box-shadow: var(--shadow-soft);
+  border-radius: 1rem;
+  background-color: var(--bg-light);
+  padding: 1.5rem;
+  transition: var(--transition-smooth);
+  margin-bottom: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  width: 100%;
+  max-width: 900px;
+}
+
+/* Calendar styles */
+.fc {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.fc-theme-standard .fc-scrollgrid {
+  border-radius: 0.5rem;
+  border: none;
+  overflow: hidden;
+}
+
+.fc-theme-standard td, .fc-theme-standard th {
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+.fc-daygrid-day:hover {
+  background-color: rgba(249, 250, 251, 0.8);
+}
+
+.fc-event {
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 4px;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.fc-event:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.fc-toolbar-title {
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem !important;
+  color: var(--primary-color);
+}
+
+.fc-button-primary {
+  background-color: var(--accent-color) !important;
+  border-color: var(--accent-color) !important;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(52, 152, 219, 0.3);
+  transition: var(--transition-smooth);
+}
+
+.fc-button-primary:hover {
+  background-color: #2980b9 !important;
+  border-color: #2980b9 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(52, 152, 219, 0.4);
+}
+
+/* Loading indicator */
+.loading-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+/* Status message */
+#status-message {
+  border-radius: 0.75rem;
+  font-family: 'Montserrat', sans-serif;
+  padding: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  max-width: 90%;
+  margin: 0 auto;
+  font-weight: 500;
+  animation: fadeIn 0.3s ease;
+  background-color: var(--text-box-bg);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+  .fc-header-toolbar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  body {
+    background-attachment: scroll;
+  }
+  
+  .content-container {
+    padding: 2rem 1rem;
+  }
+  
+  .header-section {
+    padding: 1.5rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7);
+  }
+  
+  h1::after {
+    width: 60px;
+    height: 2px;
+    bottom: -8px;
+  }
+  
+  .instruction-text {
+    font-size: 1rem;
+    margin-top: 1.2rem;
+  }
+  
+  #calendar {
+    padding: 1rem;
+  }
+}
