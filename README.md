@@ -1,2 +1,2 @@
 # tennisbookingAC
-A tennis seesion booking system webpage.
+A tennis session booking system webpage.
