@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>View Booked Tennis Slots</title>
+
+  <!-- Tailwind CSS (via CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            montserrat: ['Montserrat', 'sans-serif'],
+            playfair: ['"Playfair Display"', 'serif'],
+          },
+          colors: {
+            primary: '#2c3e50',
+            accent: '#3498db',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- FullCalendar Bundle (all-in-one) -->
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    h1 { font-size: 2.6rem !important; line-height: 1.2 !important; letter-spacing: -0.01em !important; white-space: nowrap !important; }
+    h1::after { width: 80px !important; bottom: -10px !important; }
+    @media (max-width: 768px) { h1 { font-size: 1.8rem !important; } }
+  </style>
+</head>
+<body>
+  <div class="content-container">
+    <div class="booking-container">
+      <div class="mx-auto" style="max-width:900px;width:100%;">
+        <div class="header-section">
+          <div class="title-container">
+            <h1>View Booked Tennis Slots</h1>
+          </div>
+          <p class="instruction-text">
+            Enter the <span class="font-semibold">access code</span> to view all booked tennis slots. This page is for admin/coach use only.
+          </p>
+        </div>
+        <div id="access-code-section" class="w-full max-w-md mx-auto mt-6 mb-8 bg-white bg-opacity-80 rounded-lg shadow p-6 flex flex-col items-center">
+          <label for="access-code" class="block text-lg font-medium text-gray-700 mb-2">Access Code</label>
+          <input type="password" id="access-code" class="w-full border border-gray-300 rounded-lg p-3 mb-4 focus:ring focus:ring-accent focus:ring-opacity-50 focus:border-accent transition" placeholder="Enter 4-digit code" maxlength="8" />
+          <button id="verify-code-btn" class="w-full bg-accent text-white py-3 rounded-lg font-medium hover:bg-accent/90 transition">Verify</button>
+          <div id="access-error" class="text-red-600 mt-3 hidden"></div>
+        </div>
+        <div id="calendar-section" style="display:none;">
+          <div id="calendar" style="max-width:900px;width:100%;margin-top:24px;"></div>
+          <div id="status-message" class="mt-6 p-4 text-center hidden"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="booked.js"></script>
+</body>
+</html> 
